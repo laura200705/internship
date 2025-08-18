@@ -4,7 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
+
+
+
+      <style>
+       @media (max-width: 600px) {
+      body {
+        background-color: #103555;
+        align-items: center;
+      }
+      h1 {
+        font-size: 20px;
+        color: darkblue;
+      }
+      img {
+        width: 100px;
+      }
+    }
+
+    h1 {
+      position: sticky; 
+      top: 0;
+      background: white;
+      padding: 10px;
+    }
+    img[alt="Profile Picture"] {
+      position: absolute;
+      right: 20px;
+      top: 100px;
+      border: 2px solid black;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      margin-top: 180px; 
+    }
+
+    .gallery img:nth-child(1) {
+      order: 2; 
+    }
+
+    .gallery img:nth-child(2) {
+      order: 1;
+      align-self: flex-start; 
+    }
+    .gallery img:nth-child(3) {
+      order: 3;
+    }
+
+   
+    h3 + p {
+      color: darkgreen; 
+    }
+    h3 ~ p {
+      font-style: italic;
+    }
+
+    
+    a:hover {
+      color: red; 
+    }
+    input:focus {
+      border: 2px solid blue;
+    }
+
+  </style>
+
 </head>
+
+
+
+
+
 <body>
     <h1 center>My Profile</h1>
 
@@ -31,6 +103,48 @@
     <img src="img/f1.jpg" alt="Photo 2" width="150">
     <img src="img/f4.jpg" alt="Photo 3" width="150">
   </p>
+
+    <h3>About Me</h3>
+  <p>
+    Hello! My name is <b>Laura</b>.  
+    I love <i>coding</i> and <u>exploring new technologies</u>.  
+    Sometimes I <mark>highlight important things</mark> when I study.  
+    Also, here’s a <a href="https://www.w3schools.com/html/html_inline_elements.asp" target="_blank">useful HTML reference</a>.  
+    <span style="color: blue;">This text is blue using a span inline element.</span>
+  </p>
+
+  <!-- Form Example -->
+  <h3>Contact Me</h3>
+  <form>
+    <!-- Text Inputs -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <!-- Other Input Types -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="1" max="100"><br><br>
+
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="other"> Other<br><br>
+
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" name="color"><br><br>
+
+    <!-- Submit / Reset -->
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+  </form>
 
 </body>
 </html>
